@@ -1,0 +1,134 @@
+/* RESET */
+body,html {
+    margin: 0;
+    padding: 0;
+}
+h1,h3,p,section,div,button {
+    margin: 0;
+    padding: 0;
+}
+/* DEFAULT */
+body,html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: rgb(213, 215, 251);
+}
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+/* UTILITY */
+.light-grey {
+    color: #BEC4DC;
+}
+.btn {
+    width: 80px;
+    height: 80%;
+    background: #454546;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+}
+/* APP-WRAPPER */
+.app_wrapper {
+    padding: 1rem;
+    width: 80%;
+    height: 700px;
+    background: rgb(39, 39, 39);
+    display: flex;
+    border-radius: 3%;
+    -webkit-box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
+-moz-box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
+box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
+
+}
+/* LEFT-CONTENT */
+.left_content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__title {
+    margin: .5rem 0;
+}
+
+.search {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem 3rem;
+}
+
+.search__input {
+    display: block;
+    width: 100%;
+    padding: .6rem 1rem;
+    background: #989AAD;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    color: rgb(211, 211, 211);
+}
+
+.search__input::placeholder {
+    color: rgb(211, 211, 211);
+}
+
+.projects {
+    width: 80%;
+    height: 50%;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.projects__container {
+    width: 100%;
+    padding: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.projects__project_card {
+    width: 90px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.card-main {
+    width: 100%;
+    height: 80%;
+    background: #AF5A71;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  
+    font-weight: 900;
+}
+
+.card_bottom {
+    margin-top: 1rem;
+}
+
+/* RIGHT-CONTENT */
+.right_content {
+    width: 50%;
+    border-radius: 10px;
+    background: #fbfcfc;
+}
