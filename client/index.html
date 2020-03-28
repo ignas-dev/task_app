@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -14,11 +15,11 @@
                 <p class="header__text light-grey">Welcome back to the workspace, we missed You!</p>
             </header>
             <section class="search">
-                <input class="search__input" type="search" name="" id="search-input" placeholder="Search Task or Project...">
+                <input id="searchInput" class="search__input" type="search" name="" placeholder="Search Task or Project...">
             </section>
             <section class="projects">
-                <h3 class="projects__title">Projects <span class="projects_counter">(13)</span> </h3>
-                <div class="projects__container">
+                <h3 class="projects__title">Projects <span class="projects_counter" id="projectsNumber">(13)</span> </h3>
+                <div class="projects__container" id="projectsContainer">
                     <div class="projects__project_card">
                         <div class="card-main">
                             <p class="text_center">GH</p>
@@ -28,29 +29,71 @@
                         </div>
                     </div>
                     <div class="projects__load_more">
-                        <button class="btn btn_load_more">8+</button>
+                        <button class="btn btn_load_more" id="loadMore-btn">8+</button>
                     </div>
                 </div>
             </section>
         </div>
         <div class="right_content">
             <header class="header">
-                <h1 class="header__title">You'r Tasks</h1>
+                <h1 class="header__title font-dark">You'r Tasks</h1>
             </header>
             <section class="tasks_container">
-                <header class="taks_container__header">
+                <header class="tasks_container__header">
                     <h3 class="task_container__title">Today</h3>
                     <div class="tasks_container__filter_tasks">
-
+                        ...
                     </div>
                 </header>
-                <div class="tasks_container__task">
-                    <input type="checkbox" id="task-id" name="task1">
-                    <label for="task-id"> Buy new air filter</label>
-                    <span class="task_status">Approved</span>
-                </div>                
+                <div class="tasks" id="tasksContainer">
+                    <div class="tasks_container__task">
+                        <span class="column">
+                            <input type="checkbox" id="task-id" name="task1">
+                            <label for="task-id"> Buy new air filter</label>
+                        </span>
+                        <span class="task_status column">Approved</span>
+                    </div>                
+                </div>
             </section>
+            <div class="button-container">
+                <button class="btn btn-add" id="btn-add-task">+</button>
+            </div>
+            <div class="add_new_task hide" id="add-task-modal">
+                <header class="header">
+                    <h1 class="header__title">Add Task</h1>
+                </header>
+                <div class="add_new_task__content">
+                    <label class="add_new_task__label" for="task-name">
+                        Name the task
+                        <input class="input" type="text" id="task-name" placeholder="e.g Fix navbar issues">
+                    </label>
+                    <label class="add_new_task__label" for="task-date">
+                        Task date
+                        <input class="input" type="date" name="" id="task-date">
+                    </label>
+                    <label class="add_new_task__label" for="project-name">
+                        Chose project name
+                        <select class="select" name="" id="option-project-name">
+                            <option class="option" value="green-house">Green House</option>
+                        </select>
+                        <label for="" class="add_new_task__label">
+                            Add new project
+                            <input class="input" type="text" placeholder="Project name" id="input-project-name">
+                        </label>
+                    </label>
+                </div>
+                <div class="save-btn">
+                    <button class="btn btn-save" id="save">
+                        Save Task
+                    </button>
+                </div>
+                <div class="cancel-btn">
+                    <button class="btn btn-cancel" id="cancel">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>

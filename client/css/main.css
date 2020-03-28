@@ -1,3 +1,18 @@
+/* VARIABLES */
+:root {
+    --main-bg-color: rgb(39, 39, 39);
+    --body-bg-color: rgb(213,215,251);
+    --right-bg-color: #fbfcfc;
+    --btn-color: #454546;
+    --light-grey: #BEC4DC;
+    --dark-grey: #a4a5aa;
+    --font-color-white: #fff;
+    --font-color-dark: #383838;
+    --grey: #989AAD; 
+    --dark-purple: #AF5A71;
+    --save-btn: rgb(43, 173, 50);
+    --cancel-btn: rgb(216, 52, 52);
+}
 /* RESET */
 body,html {
     margin: 0;
@@ -16,19 +31,20 @@ body,html {
     justify-content: center;
     align-items: center;
     color: #fff;
-    background: rgb(213, 215, 251);
+    background: var(--body-bg-color);
+    font-family: 'Roboto', sans-serif;
 }
 *,*:before,*:after {
     box-sizing: border-box;
 }
 /* UTILITY */
 .light-grey {
-    color: #BEC4DC;
+    color: var(--light-grey);
 }
 .btn {
     width: 80px;
-    height: 80%;
-    background: #454546;
+    height: 80px;
+    background: var(--btn-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,14 +54,45 @@ body,html {
     cursor: pointer;
     font-weight: 900;
     letter-spacing: 1px;
-    color: #fff;
+    color: var(--font-color-white);
 }
+
+.btn-add {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 40px;
+    height: 40px;
+    background: var(--dark-purple)
+}
+
+.btn-save {
+    position: absolute;
+    bottom: 1rem;
+    width: 110px;
+    height: 50px;
+    background: var(--save-btn);
+}
+.btn-cancel {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 110px;
+    height: 50px;
+    background: var(--cancel-btn);
+}
+
+.hide {
+    display: none;
+}
+
+
 /* APP-WRAPPER */
 .app_wrapper {
     padding: 1rem;
     width: 80%;
     height: 700px;
-    background: rgb(39, 39, 39);
+    background: var(--main-bg-color);
     display: flex;
     border-radius: 3%;
     -webkit-box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
@@ -61,6 +108,12 @@ box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem 4rem;
+}
+
+.header {
+    text-align: left;
+    width: 100%;
 }
 
 .header__title {
@@ -70,26 +123,26 @@ box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
 .search {
     width: 100%;
     margin: 2rem 0;
-    padding: 1rem 3rem;
+    padding: 1rem 0;
 }
 
 .search__input {
     display: block;
     width: 100%;
     padding: .6rem 1rem;
-    background: #989AAD;
+    background: var(--grey);
     outline: none;
     border: none;
     border-radius: 12px;
-    color: rgb(211, 211, 211);
+    color: var(--font-color-white);
 }
 
 .search__input::placeholder {
-    color: rgb(211, 211, 211);
+    color: var(--font-color-white);
 }
 
 .projects {
-    width: 80%;
+    width: 100%;
     height: 50%;
     margin-top: 3rem;
     text-align: left;
@@ -113,7 +166,7 @@ box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
 .card-main {
     width: 100%;
     height: 80%;
-    background: #AF5A71;
+    background: var(--dark-purple);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +181,76 @@ box-shadow: 7px 15px 9px -6px rgba(0,0,0,.5);
 
 /* RIGHT-CONTENT */
 .right_content {
+    position: relative;
+    padding: 4rem 4rem;
     width: 50%;
     border-radius: 10px;
-    background: #fbfcfc;
+    background: var(--right-bg-color);
+}
+
+.font-dark {
+    color: var(--font-color-dark);
+}
+
+.tasks_container {
+    margin-top: 3rem;
+    width: 100%;
+    color: var(--dark-grey);
+}
+
+.tasks_container__header {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task_container__title {
+    color: var(--font-color-dark);
+    font-weight: 900;
+}
+
+.tasks_container__task {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add_new_task {
+    padding: 2rem ;
+    background: var(--right-bg-color);
+    -webkit-box-shadow: 2px 9px 14px -1px rgba(0,0,0,.5);
+    -moz-box-shadow: 2px 9px 14px -1px rgba(0,0,0,.5);
+    box-shadow: 2px 9px 14px -1px rgba(0,0,0,.5);
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%);
+    color: var(--font-color-dark);
+}
+
+.add_new_task__label {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.input {
+    padding: .5rem 1rem;
+    border: 2px solid var(--light-grey);
+}
+
+.select {
+    padding: .5rem 1rem;
+    border: 2px solid var(--light-grey);
+}
+
+.option {
+    padding: .5rem 1rem;
+    border: 2px solid var(--light-grey);
 }
